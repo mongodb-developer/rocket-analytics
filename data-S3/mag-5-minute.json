@@ -1,0 +1,2 @@
+{"_id":{"$oid":"6300028007daf4c39fa85b3f"},"time_tag":{"$date":"2022-08-18T12:22:00Z"},"bx_gsm":5.9,"by_gsm":-0.28,"bz_gsm":-7.11,"lon_gsm":357.33,"lat_gsm":-50.31,"bt":9.77,"metric":"mag-5-minute"}
+{"_id":{"$oid":"6300028007daf4c39fa85b40"},"time_tag":{"$date":"2022-08-18T12:23:00Z"},"bx_gsm":5.59,"by_gsm":3.45,"bz_gsm":-7.1,"lon_gsm":31.64,"lat_gsm":-47.23,"bt":9.72,"metric":"mag-5-minute"}

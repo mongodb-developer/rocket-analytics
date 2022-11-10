@@ -1,0 +1,36 @@
+db.runCommand(
+	{
+		sqlSetSchema : "SolarWind",
+		schema: {
+			"version": NumberLong("1"),
+			"jsonSchema": {
+				bsonType: [ 'object' ],
+				properties: {
+					_id: { bsonType: [ 'objectId' ] },
+					bt: { bsonType: [ 'double' ] },
+					bx_gsm: { bsonType: [ 'double' ] },
+					by_gsm: { bsonType: [ 'double' ] },
+					bz_gsm: { bsonType: [ 'double' ] },
+					density: { bsonType: [ 'double' ] },
+					lat_gsm: { bsonType: [ 'double' ] },
+					lon_gsm: { bsonType: [ 'double' ] },
+					metric: { bsonType: [ 'string' ] },
+					speed: { bsonType: [ 'double' ] },
+					temperature: { bsonType: [ 'double' ] },
+					time_tag: { bsonType: [ 'date' ] },
+					vx_gse: { bsonType: [ 'double' ] },
+					vx_gsm: { bsonType: [ 'double' ] },
+					vy_gse: { bsonType: [ 'double' ] },
+					vy_gsm: { bsonType: [ 'double' ] },
+					vz_gse: { bsonType: [ 'double' ] },
+					vz_gsm: { bsonType: [ 'double' ] },
+					x_gse: { bsonType: [ 'double' ] },
+					x_gsm: { bsonType: [ 'double' ] },
+					y_gse: { bsonType: [ 'double' ] },
+					z_gse: { bsonType: [ 'double' ] },
+					z_gsm: { bsonType: [ 'double' ] }
+				}
+			}
+		}
+	}
+)
