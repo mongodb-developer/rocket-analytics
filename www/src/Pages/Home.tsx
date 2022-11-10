@@ -279,7 +279,7 @@ function Home() {
                                           >
                                           
                                           <h5 style={{fontWeight:"bolder",fontSize:"0.9em"}}>{String(item.timeStamp).split('T')[0]} @ {String(item.timeStamp).split('T')[1]} <span className="tag device"><b>{item.device}</b></span><span className="tag"><b>{item.parameter}</b></span></h5>
-                                          <h5><b>{item.title}</b> <a href={getURL(item)} target="_blank">View Chart</a></h5>
+                                          <h5><b>{item.title}</b> <a href={getURL(item)} target="_self">View Chart</a></h5>
                                           <p style={{fontWeight:"lighter"}}>
                                              {item.notes}
                                           </p>
