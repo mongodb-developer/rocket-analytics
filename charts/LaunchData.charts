@@ -1,0 +1,638 @@
+{
+	"exportVersion": 6,
+	"dashboards": {
+		"dashboard-1": {
+			"description": "",
+			"embedding": {
+				"anonymousAuthEnabled": true,
+				"providerAuthEnabled": true
+			},
+			"filters": [{
+				"type": "Date",
+				"disabled": false,
+				"name": "time",
+				"settings": {
+					"type": "absolute",
+					"absolute": {
+						"from": {
+							"enabled": true,
+							"date": "2020-10-13",
+							"time": "13:30:00",
+							"inclusive": true
+						},
+						"to": {
+							"enabled": true,
+							"date": "2020-10-13",
+							"time": "13:35:00",
+							"inclusive": true
+						}
+					},
+					"relative": {
+						"from": {
+							"enabled": false,
+							"tense": null,
+							"value": "",
+							"unit": null
+						},
+						"until": {
+							"enabled": false,
+							"tense": null,
+							"value": "",
+							"unit": null
+						}
+					},
+					"period": {
+						"direction": "previous",
+						"count": "1",
+						"unit": "month",
+						"includeCurrent": true
+					}
+				},
+				"linkedFields": [{
+					"dataSourceId": "data-source-2",
+					"fieldPath": "time"
+				}]
+			}],
+			"layout": [{
+				"i": "item-1",
+				"w": 4,
+				"h": 2,
+				"x": 4,
+				"y": 2
+			}, {
+				"i": "item-2",
+				"w": 4,
+				"h": 2,
+				"x": 4,
+				"y": 0
+			}, {
+				"i": "item-3",
+				"w": 4,
+				"h": 2,
+				"x": 0,
+				"y": 0
+			}, {
+				"i": "item-4",
+				"w": 2,
+				"h": 2,
+				"x": 0,
+				"y": 2
+			}, {
+				"i": "item-5",
+				"w": 2,
+				"h": 2,
+				"x": 2,
+				"y": 2
+			}],
+			"title": "LaunchData"
+		}
+	},
+	"items": {
+		"item-1": {
+			"calculatedFields": [],
+			"channels": {
+				"x": {
+					"channelType": "value",
+					"field": "time",
+					"inferredType": "Date",
+					"type": "temporal"
+				},
+				"y": {
+					"channelType": "value",
+					"field": "OMPS_Range_M1",
+					"inferredType": "Number",
+					"type": "quantitative"
+				},
+				"y_series_0": {
+					"channelType": "value",
+					"field": "OMPS_Range_M2",
+					"inferredType": "Number",
+					"type": "quantitative"
+				},
+				"y_series_1": {
+					"channelType": "value",
+					"field": "OMPS_Range_M3",
+					"inferredType": "Number",
+					"type": "quantitative"
+				},
+				"y_series_2": {
+					"channelType": "value",
+					"field": "OMPS_Range_M4",
+					"inferredType": "Number",
+					"type": "quantitative"
+				}
+			},
+			"chartType": "Line Continuous",
+			"convertedFields": [{
+				"fieldPath": "time",
+				"convertTo": "date",
+				"arrayParentPaths": []
+			}],
+			"customisations": {
+				"options": {
+					"trendline": {
+						"enabled": false,
+						"value": {
+							"series": "y",
+							"type": null
+						}
+					}
+				},
+				"conditionalFormatting": [],
+				"axes": {
+					"y": {
+						"labelOverride": {
+							"enabled": true,
+							"value": "Ozone Level"
+						}
+					}
+				},
+				"channels": {
+					"x": {
+						"labelOverride": {
+							"enabled": true,
+							"value": "Time"
+						},
+						"datePreset": {
+							"enabled": true,
+							"value": "Custom"
+						},
+						"timePreset": {
+							"enabled": true,
+							"value": "Custom"
+						},
+						"dateTimeFormatting": {
+							"enabled": true,
+							"value": "HH:mm:ss"
+						}
+					},
+					"y": {
+						"numberFormatting": {
+							"enabled": true,
+							"value": "Default"
+						}
+					},
+					"y_series_0": {
+						"numberFormatting": {
+							"enabled": true,
+							"value": "Default"
+						}
+					},
+					"y_series_1": {
+						"numberFormatting": {
+							"enabled": true,
+							"value": "Default"
+						}
+					},
+					"y_series_2": {
+						"numberFormatting": {
+							"enabled": true,
+							"value": "Default"
+						}
+					}
+				}
+			},
+			"dashboardId": "dashboard-1",
+			"dataSourceId": "data-source-1",
+			"description": "",
+			"filters": [{
+				"fieldPath": "meta.device",
+				"type": "String",
+				"disabled": false,
+				"settings": {
+					"allOthers": false,
+					"values": ["lidar"]
+				}
+			}],
+			"iconValue": "line-continuous",
+			"interactiveFiltering": "highlight",
+			"itemType": "chart",
+			"lookupFields": [],
+			"meta": {},
+			"missedFields": [],
+			"query": null,
+			"queryId": null,
+			"reductions": {},
+			"sample": false,
+			"title": "Lidar OMPS",
+			"embedding": {
+				"anonymousAuthWhitelist": ["time"]
+			}
+		},
+		"item-2": {
+			"calculatedFields": [],
+			"channels": {
+				"x": {
+					"channelType": "value",
+					"field": "time",
+					"inferredType": "Date",
+					"type": "temporal"
+				},
+				"y": {
+					"channelType": "value",
+					"field": "DATA_DELTA_VEL1",
+					"inferredType": "Number",
+					"type": "quantitative"
+				},
+				"y_series_0": {
+					"channelType": "value",
+					"field": "DATA_DELTA_VEL2",
+					"inferredType": "Number",
+					"type": "quantitative"
+				},
+				"y_series_1": {
+					"channelType": "value",
+					"field": "DATA_DELTA_VEL3",
+					"inferredType": "Number",
+					"type": "quantitative"
+				}
+			},
+			"chartType": "Line Continuous",
+			"convertedFields": [],
+			"customisations": {
+				"options": {
+					"lineSmoothing": {
+						"enabled": true,
+						"value": "monotone"
+					},
+					"trendline": {
+						"enabled": false,
+						"value": {
+							"series": "y",
+							"type": null
+						}
+					}
+				},
+				"conditionalFormatting": [],
+				"axes": {
+					"y": {
+						"labelOverride": {
+							"enabled": true,
+							"value": "Delta Velocity"
+						}
+					}
+				},
+				"channels": {
+					"x": {
+						"labelOverride": {
+							"enabled": true,
+							"value": "Time"
+						},
+						"datePreset": {
+							"enabled": true,
+							"value": "Custom"
+						},
+						"timePreset": {
+							"enabled": true,
+							"value": "Custom"
+						},
+						"dateTimeFormatting": {
+							"enabled": true,
+							"value": "HH:mm:ss"
+						}
+					},
+					"y": {
+						"numberFormatting": {
+							"enabled": true,
+							"value": "Default"
+						}
+					},
+					"y_series_0": {
+						"numberFormatting": {
+							"enabled": true,
+							"value": "Default"
+						}
+					},
+					"y_series_1": {
+						"numberFormatting": {
+							"enabled": true,
+							"value": "Default"
+						}
+					}
+				}
+			},
+			"dashboardId": "dashboard-1",
+			"dataSourceId": "data-source-1",
+			"description": "",
+			"filters": [{
+				"fieldPath": "meta.device",
+				"type": "String",
+				"disabled": false,
+				"settings": {
+					"allOthers": false,
+					"values": ["dlc"]
+				}
+			}],
+			"iconValue": "line-continuous",
+			"interactiveFiltering": "highlight",
+			"itemType": "chart",
+			"lookupFields": [],
+			"meta": {},
+			"missedFields": [],
+			"query": null,
+			"queryId": null,
+			"reductions": {},
+			"sample": false,
+			"title": "Change in Velocity Over Time",
+			"embedding": {
+				"anonymousAuthWhitelist": ["time"]
+			}
+		},
+		"item-3": {
+			"calculatedFields": [],
+			"channels": {
+				"x": {
+					"channelType": "value",
+					"field": "time",
+					"inferredType": "Date",
+					"type": "temporal"
+				},
+				"y": {
+					"channelType": "value",
+					"field": "truth_vel_CON_ECEF_ECEF_MpS1",
+					"inferredType": "Number",
+					"type": "quantitative"
+				},
+				"y_series_0": {
+					"channelType": "value",
+					"field": "truth_vel_CON_ECEF_ECEF_MpS2",
+					"inferredType": "Number",
+					"type": "quantitative"
+				},
+				"y_series_1": {
+					"channelType": "value",
+					"field": "truth_vel_CON_ECEF_ECEF_MpS3",
+					"inferredType": "Number",
+					"type": "quantitative"
+				}
+			},
+			"chartType": "Line Continuous",
+			"convertedFields": [],
+			"customisations": {
+				"options": {
+					"trendline": {
+						"enabled": false,
+						"value": {
+							"series": "y",
+							"type": null
+						}
+					}
+				},
+				"conditionalFormatting": [],
+				"axes": {
+					"y": {
+						"labelOverride": {
+							"enabled": true,
+							"value": "Velocity"
+						}
+					}
+				},
+				"channels": {
+					"x": {
+						"labelOverride": {
+							"enabled": true,
+							"value": "Time"
+						},
+						"datePreset": {
+							"enabled": true,
+							"value": "Custom"
+						},
+						"timePreset": {
+							"enabled": true,
+							"value": "Custom"
+						},
+						"dateTimeFormatting": {
+							"enabled": true,
+							"value": "HH:mm:ss"
+						}
+					},
+					"y": {
+						"numberFormatting": {
+							"enabled": true,
+							"value": "Default"
+						}
+					},
+					"y_series_0": {
+						"numberFormatting": {
+							"enabled": true,
+							"value": "Default"
+						}
+					},
+					"y_series_1": {
+						"numberFormatting": {
+							"enabled": true,
+							"value": "Default"
+						}
+					}
+				}
+			},
+			"dashboardId": "dashboard-1",
+			"dataSourceId": "data-source-1",
+			"description": "",
+			"filters": [{
+				"fieldPath": "meta.device",
+				"type": "String",
+				"disabled": false,
+				"settings": {
+					"allOthers": false,
+					"values": ["truth"]
+				}
+			}],
+			"iconValue": "line-continuous",
+			"interactiveFiltering": "highlight",
+			"itemType": "chart",
+			"lookupFields": [],
+			"meta": {},
+			"missedFields": [],
+			"query": null,
+			"queryId": null,
+			"reductions": {},
+			"sample": false,
+			"title": "Velocity Over Time",
+			"embedding": {
+				"anonymousAuthWhitelist": ["time"]
+			}
+		},
+		"item-4": {
+			"calculatedFields": [],
+			"channels": {
+				"sort": {
+					"channelType": "sort",
+					"field": "time",
+					"inferredType": "Date",
+					"type": "temporal",
+					"sort": {
+						"axis": "Category",
+						"order": "ascending"
+					},
+					"isLimiting": true,
+					"limitingSize": 1
+				},
+				"display": {
+					"channelType": "any",
+					"field": "time",
+					"inferredType": "Date",
+					"type": "nominal"
+				}
+			},
+			"chartType": "Top Item",
+			"convertedFields": [],
+			"customisations": {
+				"options": {
+					"labelSize": {
+						"enabled": true,
+						"value": "72"
+					}
+				},
+				"conditionalFormatting": [],
+				"axes": {},
+				"channels": {
+					"sort": {},
+					"display": {
+						"labelOverride": {
+							"enabled": true,
+							"value": " "
+						},
+						"datePreset": {
+							"enabled": true,
+							"value": "Custom"
+						},
+						"timePreset": {
+							"enabled": true,
+							"value": "Custom"
+						},
+						"dateTimeFormatting": {
+							"enabled": true,
+							"value": "HH:mm:ss"
+						}
+					}
+				}
+			},
+			"dashboardId": "dashboard-1",
+			"dataSourceId": "data-source-1",
+			"description": "",
+			"filters": [{
+				"fieldPath": "meta.device",
+				"type": "String",
+				"disabled": true,
+				"settings": {
+					"allOthers": false,
+					"values": ["dlc", "lidar", "truth"]
+				}
+			}],
+			"iconValue": "top-item",
+			"interactiveFiltering": "highlight",
+			"itemType": "chart",
+			"lookupFields": [],
+			"meta": {},
+			"missedFields": [],
+			"query": null,
+			"queryId": null,
+			"reductions": {},
+			"sample": false,
+			"title": "Readings Start",
+			"embedding": {
+				"anonymousAuthWhitelist": ["time"]
+			}
+		},
+		"item-5": {
+			"calculatedFields": [],
+			"channels": {
+				"sort": {
+					"channelType": "sort",
+					"field": "time",
+					"inferredType": "Date",
+					"type": "temporal",
+					"sort": {
+						"axis": "Category",
+						"order": "descending"
+					},
+					"isLimiting": true,
+					"limitingSize": 1
+				},
+				"display": {
+					"channelType": "any",
+					"field": "time",
+					"inferredType": "Date",
+					"type": "nominal"
+				}
+			},
+			"chartType": "Top Item",
+			"convertedFields": [],
+			"customisations": {
+				"options": {
+					"labelSize": {
+						"enabled": true,
+						"value": "72"
+					}
+				},
+				"conditionalFormatting": [],
+				"axes": {},
+				"channels": {
+					"sort": {},
+					"display": {
+						"labelOverride": {
+							"enabled": true,
+							"value": " "
+						},
+						"datePreset": {
+							"enabled": true,
+							"value": "Custom"
+						},
+						"timePreset": {
+							"enabled": true,
+							"value": "Custom"
+						},
+						"dateTimeFormatting": {
+							"enabled": true,
+							"value": "HH:mm:ss"
+						}
+					}
+				}
+			},
+			"dashboardId": "dashboard-1",
+			"dataSourceId": "data-source-1",
+			"description": "",
+			"filters": [{
+				"fieldPath": "meta.device",
+				"type": "String",
+				"disabled": true,
+				"settings": {
+					"allOthers": false,
+					"values": ["dlc", "lidar", "truth"]
+				}
+			}],
+			"iconValue": "top-item",
+			"interactiveFiltering": "highlight",
+			"itemType": "chart",
+			"lookupFields": [],
+			"meta": {},
+			"missedFields": [],
+			"query": null,
+			"queryId": null,
+			"reductions": {},
+			"sample": false,
+			"title": "Readings End",
+			"embedding": {
+				"anonymousAuthWhitelist": ["time"]
+			}
+		}
+	},
+	"dataSources": {
+		"data-source-1": {
+			"alias": "launchData",
+			"collection": "launchData",
+			"database": "aerospace",
+			"deployment": "rocket-telemetry",
+			"sourceType": "cluster"
+		},
+		"data-source-2": {
+			"alias": "notes",
+			"collection": "notes",
+			"database": "aerospace",
+			"deployment": "rocket-telemetry",
+			"sourceType": "cluster"
+		}
+	},
+	"queries": {}
+}
