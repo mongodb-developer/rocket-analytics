@@ -1,0 +1,2 @@
+{"_id":{"$oid":"6300028007daf4c39fa86113"},"time_tag":{"$date":"2022-08-18T12:23:00Z"},"density":9.77,"speed":583.8,"temperature":332107.0,"metric":"plasma-5-minute"}
+{"_id":{"$oid":"6300028007daf4c39fa86114"},"time_tag":{"$date":"2022-08-18T12:24:00Z"},"density":9.79,"speed":588.3,"temperature":321908.0,"metric":"plasma-5-minute"}
