@@ -1,0 +1,94 @@
+{
+	"name": "default",
+	"collectionName": "notes",
+	"database": "aerospace",
+	"mappings": {
+		"dynamic": false,
+		"fields": {
+		  "author": {
+			"fields": {
+			  "name": [
+				{
+				  "dynamic": true,
+				  "type": "document"
+				},
+				{
+				  "type": "string"
+				},
+				{
+				  "type": "stringFacet"
+				}
+			  ]
+			},
+			"type": "document"
+		  },
+		  "device": [
+			{
+			  "dynamic": true,
+			  "type": "document"
+			},
+			{
+			  "type": "string"
+			},
+			{
+			  "type": "stringFacet"
+			}
+		  ],
+		  "notes": [
+			{
+			  "dynamic": true,
+			  "type": "document"
+			},
+			{
+			  "type": "string"
+			},
+			{
+			  "type": "autocomplete"
+			}
+		  ],
+		  "parameter": [
+			{
+			  "dynamic": true,
+			  "type": "document"
+			},
+			{
+			  "type": "string"
+			},
+			{
+			  "type": "stringFacet"
+			}
+		  ],
+		  "timeStamp": [
+			{
+			  "dynamic": true,
+			  "type": "document"
+			},
+			{
+			  "type": "dateFacet"
+			}
+		  ],
+		  "title": [
+			{
+			  "dynamic": true,
+			  "type": "document"
+			},
+			{
+			  "type": "string"
+			},
+			{
+			  "type": "autocomplete"
+			}
+		  ],
+		  "violationType": [
+			{
+			  "dynamic": true,
+			  "type": "document"
+			},
+			{
+			  "type": "stringFacet"
+			}
+		  ]
+		}
+	  },
+	  "storedSource": true
+}
