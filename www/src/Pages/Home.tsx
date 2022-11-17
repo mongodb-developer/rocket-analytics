@@ -81,7 +81,7 @@ function Home() {
                                  }}
                               index="default"
                               dataField="author.name"
-                              URLParams
+                              
                               aggregationSize={5}
                               includeFields={['notes','author.name','device','parameter','title','timeStamp']}
                               // To initialize with default value
@@ -130,7 +130,7 @@ function Home() {
                               type="term"
                               index="default"
                               dataField="parameter"
-                              URLParams
+                              
                               aggregationSize={9}
                               includeFields={['notes','author.name','device','parameter','title','timeStamp']}
                               // To initialize with default value
@@ -182,7 +182,7 @@ function Home() {
                               type="term"
                               index="default"
                               dataField="device"
-                              URLParams
+                              
                               aggregationSize={9}
                               includeFields={['notes','author.name','device','parameter','title','timeStamp']}
                               // To initialize with default value
