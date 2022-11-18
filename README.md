@@ -140,39 +140,31 @@ The following aggregation queries should be loaded into Compass
 3. Data Lake -> launchData collection (the one you set the schema on above)
    * ReadingCountByDevice
 
-This queries can be found in `~/compass/lauchDataAggs.js`
+This queries can be found in the [compass](./compass/) folder.
 
 ## Charts Dashboard
-The charts dashboard file is located in `./charts/LaunchData.charts`
+The [LaunchData.charts](./charts/LaunchData.charts) dashboard file contains the dashboard with charts that are embedded into the web app. Import this file into your Charts project.
 
-## Data Lake
+##  Data Lake (To-do: REMOVE)
 
 A Data Lake pipeline should be set up on the launchData collection. The backup policy should be daily. The partition attributes should be set to:
   * meta.device
   * time
 
 
-## Atlas Search/Charts Search Analytics React App
+## Reactive-search Web App
 
-[Github repository](https://github.com/ranfysvalle02/reactivesearch-mdb)
+Located under the [www](./www/) folder. The executable files are located both in [build](./www/build/) and includes as [hosting files](./appSvcs/reactive-search/hosting/) for reactive-search Atlas App (backend). 
 
-1. Clone the repository
-2. Deploy as App Services application using Realm-Cli
-3. Configure:
-   - DB Connection information
-   - Charts dashboard
-
-# DEMO SCRIPT
-
-See this [google drive](https://docs.google.com/presentation/d/1dNBiLadWn2thuiVTlG62leawAoE-QEDBHUJlMr-7fSo/edit?usp=sharing) deck for a set of slides summarizing the demo and providing a screenshot of each demo step.
+To install:
+* Import the Charts Dashboard as mentioned above
+* Obtain the embedded dashboard and charts links
+* Replace the links in the [Home.tsx](./www/src/Pages/Home.tsx) and [Profile.tsx](./www/src/Pages/Profile.tsx) files.
+* run `npm install` and then `npm run build`
+* The updated build (with links to your dashboard and charts) can be found in the [build](./www/build/) folder. Upload these files to the `hosting` section of your Atlas App (backend). Review and deploy.
 
 
+#### Credits for original work
 
-
-Credits for original work:
-
-#####Data, backend and analytics:
-* https://github.com/jayrunkel/rocketDDPDemo
-
-#####Web application:
-* https://github.com/ranfysvalle02/reactivesearch-mdb
+* Data, backend and analytics: https://github.com/jayrunkel/rocketDDPDemo
+* Web application: https://github.com/ranfysvalle02/reactivesearch-mdb
