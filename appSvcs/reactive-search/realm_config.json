@@ -8,6 +8,7 @@
     "environment": "production",
     "allowed_request_origins": [
         "http://localhost:3000",
-        "https://reactive-search-bimst.mongodbstitch.com"
+        "https://reactive-search-bimst.mongodbstitch.com",
+        "https://rockelitix-ituwr.mongodbstitch.com"
     ]
 }

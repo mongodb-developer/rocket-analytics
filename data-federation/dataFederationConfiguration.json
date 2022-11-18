@@ -1,0 +1,105 @@
+{
+  "databases": [
+    {
+      "name": "LaunchData",
+      "collections": [
+        {
+          "name": "*",
+          "dataSources": [
+            {
+              "datasetPrefix": "v1$atlas$snapshot$RBACDemo$aerospace$launchData",
+              "storeName": "aws-dls-store",
+              "trimLevel": 5
+            },
+            {
+              "datasetPrefix": "v1$atlas$snapshot$RBACDemo$aerospace$lidar",
+              "storeName": "aws-dls-store",
+              "trimLevel": 5
+            }
+          ]
+        }
+      ],
+      "views": []
+    },
+    {
+      "name": "lastLaunch",
+      "collections": [
+        {
+          "name": "lidar",
+          "dataSources": [
+            {
+              "collection": "lidar",
+              "database": "aerospace",
+              "storeName": "RBACDemo"
+            }
+          ]
+        },
+        {
+          "name": "launchData",
+          "dataSources": [
+            {
+              "collection": "launchData",
+              "database": "aerospace",
+              "storeName": "RBACDemo"
+            }
+          ]
+        },
+        {
+          "name": "launchData2",
+          "dataSources": [
+            {
+              "collection": "launchData2",
+              "database": "aerospace",
+              "storeName": "RBACDemo"
+            }
+          ]
+        },
+        {
+          "name": "plasma",
+          "dataSources": [
+            {
+              "path": "/",
+              "storeName": "rocket-data-archive"
+            }
+          ]
+        }
+      ],
+      "views": []
+    },
+    {
+      "name": "ClimateData",
+      "collections": [
+        {
+          "name": "SolarWind",
+          "dataSources": [
+            {
+              "path": "/",
+              "storeName": "rocket-data-archive"
+            }
+          ]
+        }
+      ],
+      "views": []
+    }
+  ],
+  "stores": [
+    {
+      "provider": "dls:aws",
+      "name": "aws-dls-store",
+      "region": "us-east-1"
+    },
+    {
+      "provider": "atlas",
+      "clusterName": "RBACDemo",
+      "name": "RBACDemo",
+      "projectId": "5cacdd8d553855ee7859f398"
+    },
+    {
+      "provider": "s3",
+      "bucket": "rocket-data-archive",
+      "delimiter": "/",
+      "name": "rocket-data-archive",
+      "region": "us-east-1"
+    }
+  ]
+}

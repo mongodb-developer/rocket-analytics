@@ -8,7 +8,7 @@ function Profile() {
    const { authed, loading, vote, getCustomData } = useAuth();
    const [cEmail,setCurrentEmail] = React.useState("");
 
-   let dbURL = "https://charts.mongodb.com/charts-runkel-bbjup/embed/dashboards?id=0f196545-c986-45c7-86b2-30fb1cc44efd&theme=light&autoRefresh=true&maxDataAge=3600&showTitleAndDesc=false&scalingWidth=scale&scalingHeight=scale";  
+   let dbURL = "https://charts.mongodb.com/charts-aws-reinvent22---app-driv-bhbtw/embed/dashboards?id=6361863e-fb36-47d8-8dd0-8ea226b44dc3&theme=light&autoRefresh=true&maxDataAge=3600&showTitleAndDesc=false&scalingWidth=fixed&scalingHeight=fixed";
    let chURL = "https://charts.mongodb.com/charts-aws-reinvent22---app-driv-bhbtw/embed/charts?id=6361863e-fb36-48ca-88f2-8ea226b44dc9&maxDataAge=3600&theme=light&autoRefresh=true";
    const [iframeURL,setURL] = React.useState("");
    React.useEffect(() => {
