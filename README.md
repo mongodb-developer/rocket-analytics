@@ -19,10 +19,10 @@ created by both rocket engineers and an automated system. The rocket
 engineers create notes when they want to mark a time period or
 situation that they want to remember to revisit after the launch. 
 
-An automated system (implemented as [Atlas triggers](https://www.mongodb.com/atlas/database-triggers)) is
+A fictitional automated system (which can be implemented as [Atlas triggers](https://www.mongodb.com/atlas/database-triggers)) is
 continuously watching the metrics as they stream in and creates
 notes whenever parameters reach thresholds that are out of
-bounds. TO-DO: THIS FUNCTIONALITY IS CONTEINED IN THE TRIGGER X AND ATLAS FUNC Y. Weather data is stored in an S3 bucket and analyzed in combination with the launch data post launch.
+bounds. Weather data is stored in an S3 bucket and analyzed in combination with the launch data post launch.
 
 ![Demonstration Architecture](./img/demoArchitecture.png)
 
@@ -34,15 +34,15 @@ The demonstration consists of 4 parts (or acts):
 ### Real-time analytics
 2. How MongoDB can be used to perform real-time analytics on the data during launch. 
     * [Compass](https://www.mongodb.com/products/compass) to review a number of aggregation queries on the launch data and notes collections. 
-    * [Charts](https://www.mongodb.com/products/charts) dashboard to display visualizations using various charts
+    * [Charts](https://www.mongodb.com/products/charts) dashboard to display visualizations using various charts  
 
 ### Search analytics      
 3. This section focuses on two areas:
     * [Atlas Search](https://www.mongodb.com/atlas/search) for analytics using facet counts associated with search queries.
-	* How various features of the Atlas DDP can be used in combination, via a  react web app that supports Atlas search with faceted navigation in combination with embedded Charts. Entering a search phrase, selecting facets, and clicking on search results (notes) updates the time range for the charts shown in the previous step to the time context of the selected note.
+	* How various features of the Atlas DDP can be used in combination, via a  react web app (using [MongoDB Drivers](https://www.mongodb.com/docs/drivers/) and 3rd party components like [Reactive Search](https://github.com/appbaseio/reactivesearch)) that supports Atlas search with faceted navigation in combination with embedded Charts. Entering a search phrase, selecting facets, and clicking on search results (notes) updates the time range for the charts shown in the previous step to the time context of the selected note.
 
 ### Post-launch analytics	  
-4. Using a variety of MongoDB and non-MongoDB data sources to analyze data post launch and using [Atlas Data Federation](https://www.mongodb.com/atlas/data-federation) and [Atlas SQL](https://www.mongodb.com/atlas/sql). Data is pulled from two data sources: Atlas cluster and AWS S3. Atlas Data Federation is used to create a federated endpoint that allows for the combined analysis of the current launch along with the weather data stored in S3. During the demo, this data is analyzed with popular tools such as Compass (for MQL), DBeaver and Tableau (for SQL).
+4. Using a variety of MongoDB and non-MongoDB data sources to analyze data post launch and using [Atlas Data Federation](https://www.mongodb.com/atlas/data-federation) and [Atlas SQL](https://www.mongodb.com/atlas/sql). Data is pulled from two data sources: Atlas cluster and AWS S3. Atlas Data Federation is used to create a federated endpoint that allows for the combined analysis of the current launch along with the weather data stored in S3. During the demo, this data is analyzed with popular tools such as Compass (for MQL), or [DBeaver](https://dbeaver.io) and [Tableau](https://www.tableau.com) (for SQL).
    
 
 # DEMO SETUP
@@ -56,7 +56,7 @@ The Atlas configuration components consist of:
   * Atlas cluster
   * S3 bucket (contains weather data)
 4. Charts Dashboard to review launch data
-5. Atlas Triggers to generate notes for out of bound parameters TO-DO (the code for this is fake, e.g., doesn't really work)
+5. Atlas Triggers to generate notes for out of bound parameters (excluded i this demo for simplicity)
 6. Atlas Search indexes to facilitate the note search and obtain facets.
 7. Web App built with Reach that leverages Atlas Search & Charts TO-DO [app](https://runkel-rfv-demo-tyypa.mongodbstitch.com), [github](https://github.com/ranfysvalle02/reactivesearch-mdb)
 8. [Tableau](https://www.tableau.com/) connected to the Data Federation Endpoint using Tableau connector
@@ -80,22 +80,11 @@ The configuration for the data federation endpoint can be found in the [dataFede
 
 The following schema files were created for Atlas SQL:
 
-- TO-DO: Data Lake schema: `~/dataLake/dLakeLaunchDataSchema.json`
 - Schema for data in S3 bucket: `~/dataFederation/s3SolarWindSchema.json`
 
 Use [sqlSetSchema](https://www.mongodb.com/docs/atlas/data-federation/query/sql/sqlsetschema/) to update the schemas. Create the data federation endpoint in the Atlas GUI and then connect to data federation using the [mongo shell](https://www.mongodb.com/docs/mongodb-shell/). Execute the following sequence of commands:
 
 ```
-use LaunchData
-db.runCommand({
-  sqlSetSchema: "<name of the first data lake collection>",
-  schema: {
-    "version" : 1,
-	"jsonSchema": <contents of dLakeLaunchDataSchema.json>
-  }
-}) <<< TO-DO
-
-
 use ClimateData
 db.runCommand({
   sqlSetSchema: "SolarWind",
@@ -144,12 +133,6 @@ This queries can be found in the [compass](./compass/) folder.
 
 ## Charts Dashboard
 The [LaunchData.charts](./charts/LaunchData.charts) dashboard file contains the dashboard with charts that are embedded into the web app. Import this file into your Charts project.
-
-##  Data Lake (To-do: REMOVE)
-
-A Data Lake pipeline should be set up on the launchData collection. The backup policy should be daily. The partition attributes should be set to:
-  * meta.device
-  * time
 
 
 ## Reactive-search Web App
